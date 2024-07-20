@@ -30,3 +30,4 @@ H:\Codes\DotNet\Revision\EmployeeCrudWebApi\EmployeeCrudWebApi\obj\Debug\net8.0\
 H:\Codes\DotNet\Revision\EmployeeCrudWebApi\EmployeeCrudWebApi\obj\Debug\net8.0\EmployeeCrudWebApi.pdb
 H:\Codes\DotNet\Revision\EmployeeCrudWebApi\EmployeeCrudWebApi\obj\Debug\net8.0\EmployeeCrudWebApi.genruntimeconfig.cache
 H:\Codes\DotNet\Revision\EmployeeCrudWebApi\EmployeeCrudWebApi\obj\Debug\net8.0\ref\EmployeeCrudWebApi.dll
+H:\Codes\DotNet\Revision\EmployeeCrudWebApi\EmployeeCrudWebApi\obj\Debug\net8.0\EmployeeCrudWebApi.sourcelink.json

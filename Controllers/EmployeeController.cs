@@ -8,7 +8,7 @@ namespace EmployeeCrudWebApi.Controllers
     [ApiController]
     public class EmployeeController : ControllerBase
     {
-        List<Employee> _employee = new List<Employee>()
+        public static List<Employee> _employee = new List<Employee>()
         {
             new Employee{ Id =  1, Name = "Jim", Designation = "Software Engineer", Salary = 50000},
             new Employee{ Id = 2, Name = "Mike", Designation = "Doctor", Salary = 100000},
@@ -37,14 +37,14 @@ namespace EmployeeCrudWebApi.Controllers
         [HttpPost]
         public ActionResult<Employee> AddEmployee(Employee employee)
         {
-            employee.Id = _employee.Count + 1;
+            employee.Id = _employee.Count > 0 ? _employee.Max(e => e.Id) + 1 : 1;
             _employee.Add(employee);
             return CreatedAtAction(nameof(GetEmployeeById), new { id = employee.Id }, employee);
         }
 
         //Put: api/Employee/{id}
         [HttpPut("{id}")]
-        public ActionResult<Employee> UpdateEmployee(int id, Employee updatedEmployee)
+        public IActionResult UpdateEmployee(int id, Employee updatedEmployee)
         {
             var employee = _employee.FirstOrDefault(e => e.Id == id);
             if(employee == null)
@@ -59,7 +59,7 @@ namespace EmployeeCrudWebApi.Controllers
 
         //Delete: api/Employee/{id}
         [HttpDelete("{id}")]
-        public ActionResult<Employee> DeleteEmployee(int id)
+        public IActionResult DeleteEmployee(int id)
         {
             var employee = _employee.FirstOrDefault(e => e.Id == id);
             if(employee == null)
